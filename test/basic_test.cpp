@@ -1,7 +1,25 @@
 #include "gtest/gtest.h"
+#include "s-string.h"
 
-TEST(SString, DoesConstruct) {
-  ASSERT_TRUE(true);
+using namespace speedystring;
+
+TEST(SString, DoesEQUALITY) {
+  SString control("Control");
+  SString notControl("Not control");
+  SString otherControl("Control");
+  ASSERT_TRUE(control.equals(otherControl));
+  ASSERT_FALSE(control.equals(notControl));
+}
+
+TEST(SString, DoesCONTAINS){
+  SString control("Control");
+  SString notControl("Not control");
+  SString otherControl("control");
+  SString defNotControl("definitely not");
+
+  ASSERT_FALSE(control.contains(notControl));
+  ASSERT_TRUE(notControl.contains(otherControl));
+  ASSERT_FALSE(defNotControl.contains(otherControl));
 }
 
 

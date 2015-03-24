@@ -1,4 +1,8 @@
+#ifndef SSTRING_HEADER
+#define SSTRING_HEADER
+
 #include <cstring>
+
 namespace speedystring
 {
 
@@ -13,12 +17,14 @@ class SString{
       init(value, len);
     }
 
-    int len();
+    size_t len();
     const char * c_str();
+    bool equals(SString other);
+    bool contains(SString other);
 
   private:
     char * value;
-    int length;
+    size_t length;
 
     void init(char * value, int len){
       length = len;
@@ -30,3 +36,4 @@ class SString{
 };
 
 }
+#endif
