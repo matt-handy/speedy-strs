@@ -1,6 +1,6 @@
 CC=g++
 MAKE=make
-INCLUDE=include
+INCLUDE=./include
 GTEST_LOC=../../Common/gtest-1.7.0
 
 default:
